@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_inicio"
+        android:title="@string/inicio"
+        android:icon="@drawable/ic_inicio"
+        />
+    <item
+        android:id="@+id/menu_perfil"
+        android:title="@string/perfil"
+        android:icon="@drawable/ic_perfil"
+        />
+    <item
+        android:id="@+id/menuconfiguracao"
+        android:title="@string/configuracao"
+        android:icon="@drawable/ic_config"
+        />
+
+</menu>
