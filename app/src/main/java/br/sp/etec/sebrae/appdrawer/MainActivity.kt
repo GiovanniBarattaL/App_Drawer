@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.internal.NavigationMenu
 import com.google.android.material.navigation.NavigationView
 
@@ -23,6 +25,11 @@ class MainActivity : AppCompatActivity() {
         val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
         val menu = findViewById<NavigationView>(R.id.navigationview)
         val texto = findViewById<TextView>(R.id.txtconteudo)
+        val toolbar = findViewById<MaterialToolbar>(R.id.toolbar)
+
+        toolbar.setNavigationOnClickListener {
+            drawer.openDrawer(GravityCompat.START)
+        }
 
         menu.setNavigationItemSelectedListener {
             item -> when (item.itemId) {
@@ -36,6 +43,7 @@ class MainActivity : AppCompatActivity() {
                     texto.text = "Configurações"
                 }
             }
+            drawer.closeDrawer(GravityCompat.START)
             true
         }
     }
